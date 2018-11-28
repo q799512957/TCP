@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msgconfig>
+    <msgseries type="overload">
+        <header>
+            <field id="1" type="BYTES"  name="head"      cname="帧头" length = "2"/>
+            <field id="2" type="UINT32" name="length"   cname="消息长度"/>
+            <field id="3" type="UINT8"  name="msgType"   cname="消息类型" />
+        </header>
+
+        <body id="0x01">
+            <field id="1" type="BYTES" name="equiptId"   cname="身份识别码" length="16"/>
+            <field id="2" type="UINT16" name="year"   cname="年份" length="16"/>
+            <field id="3" type="UINT8" name="month"   cname="月份" length="16"/>
+            <field id="4" type="UINT8" name="day"   cname="日" length="16"/>
+            <field id="5" type="UINT8" name="hour"   cname="小时" length="16"/>
+            <field id="6" type="UINT8" name="minute"   cname="分钟" length="16"/>
+            <field id="7" type="UINT8" name="second"   cname="秒" length="16"/>
+            <field id="8" type="BYTES" name="ip"   cname="OE向某DSC传输数据时的IP地址" length="16"/>
+            <field id="9" type="DOUBLE8" name="ptx"   cname="经度坐标" length="16"/>
+            <field id="10" type="DOUBLE8" name="pty"   cname="纬度坐标" length="16"/>
+        </body>
+
+        <body id="0x02">
+            <field id="1" type="BYTES" name="equiptId"   cname="设备身份识别码" length="16"/>
+            <field id="2" type="UINT8" name="answer"   cname="询问与回复信息" length="16"/>
+        </body>
+
+
+        <body id="0x11" msgname="单车交通数据包">
+            <field id="1" type="BYTES" name="equiptId"   cname="设备编码" length="16"/>
+            <field id="2" type="UINT8" name="equiptStatus" cname="设备硬件错误码" />
+            <!--<field id="3" type="BYTES" name="checkNo" cname="检测检测唯一标识" length="32" />-->
+            <field id="3" type="UINT16"  name="year"   cname="年" />
+            <field id="4" type="UINT8"  name="month"   cname="月" />
+            <field id="5" type="UINT8"  name="day"   cname="日" />
+            <field id="6" type="UINT8"  name="hour"   cname="时" />
+            <field id="7" type="UINT8"  name="minutes"   cname="分" />
+            <field id="8" type="UINT8"  name="seconds"   cname="秒" />
+            <!--<field id="10" type="UINT16"  name="milliseconds"   cname="毫秒" />-->
+            <field id="9" type="INT24"  name="dataNo"   cname="数据序号" />
+            <field id="10" type="UINT8"  name="line"   cname="车道号" />
+            <field id="11" type="UINT8"  name="vehicleType"   cname="车型" />
+            <field id="12" type="UINT8"  name="speed"   cname="车速"  />
+            <field id="13" type="BYTES"  name="vehicleNo"   cname="车牌号码" length="12"/>
+            <field id="14" type="UINT8"  name="vehicleNoColor"   cname="车牌颜色" />
+            <field id="15" type="UINT8"  name="axles"   cname="车轴数" />
+            <field id="16" type="BYTES"  name="total"   cname="车辆总重" length="3" />
+            <field id="17" type="UINT16"  name="weight1"   cname="车辆轴一重量" />
+            <field id="18" type="UINT16"  name="weight2"   cname="车辆轴二重量" />
+            <field id="19" type="UINT16"  name="weight3"   cname="车辆轴三重量" />
+            <field id="20" type="UINT16"  name="weight4"   cname="车辆轴四重量" />
+            <field id="21" type="UINT16"  name="weight5"   cname="车辆轴五重量" />
+            <field id="22" type="UINT16"  name="weight6"   cname="车辆轴六重量" />
+            <field id="23" type="INT24"  name="weightOther"   cname="其他轴重量" />
+            <field id="24" type="INT24"  name="weightLimit"   cname="限重标准" />
+            <field id="25" type="UINT16"  name="vehicleLength"   cname="车长" />
+            <field id="26" type="UINT16"  name="vehicleWidth"   cname="车宽" />
+            <field id="27" type="UINT16"  name="vehicleHeight"   cname="车高" />
+            <field id="28" type="UINT16"  name="reserved1"   cname="预留1" />
+            <field id="29" type="UINT16"  name="reserved2"   cname="预留2" />
+            <!--<field id="32" type="BYTES"  name="crc"   cname="CRC校验" length="2" />-->
+            <!--<field id="33" type="BYTES"  name="tail"   cname="帧尾" length="2" />-->
+        </body>
+
+        <body id="0x10" msgname="单车交通数据反馈包">
+            <field id="1" type="BYTES" name="equiptId"   cname="设备编码" length="16"/>
+            <!--<field id="2" type="BYTES" name="checkNo" cname="检测检测唯一标识" length="32" />-->
+            <field id="2" type="UINT16" name="year"   cname="年" />
+            <field id="3" type="UINT8" name="month"   cname="月" />
+            <field id="4" type="UINT8" name="day"   cname="日" />
+            <field id="5" type="INT24" name="dataNo"   cname="数据序号"  />
+            <field id="6" type="UINT16" name="result"   cname="校验结果信息代码" />
+            <!--<field id="8" type="BYTES"  name="crc"   cname="CRC校验" length="2" />-->
+            <!--<field id="9" type="BYTES"  name="tail"   cname="帧尾" length="2" />-->
+        </body>
+
+        <body id="0x12" msgname="单车图片或视频数据包格式（0x12）">
+
+            <field id="1" type="BYTES" name="equiptId"   cname="设备编码" length="16"/>
+            <field id="2" type="UINT8" name="equiptStatus"   cname="设备硬件错误码" />
+            <!--<field id="3" type="BYTES" name="checkNo" cname="检测编码" length="32" />-->
+            <field id="3" type="UINT16" name="year"   cname="年" />
+            <field id="4" type="UINT8" name="month"   cname="月" />
+            <field id="5" type="UINT8" name="day"   cname="日" />
+            <field id="6" type="UINT8"  name="hour"   cname="时" />
+            <field id="7" type="UINT8"  name="minutes"   cname="分" />
+            <field id="8" type="UINT8"  name="seconds"   cname="秒" />
+            <!--<field id="10" type="UINT16"  name="milliseconds"   cname="毫秒" />-->
+            <field id="9" type="INT24" name="dataNo"   cname="数据序号"  />
+            <field id="10" type="UINT8"  name="line"   cname="车道号" />
+            <field id="11" type="INT8"  name="imgType"   cname="数据类型" />
+            <field id="12" type="UINT32"  name="legnth"   cname="数据长度" />
+            <field id="13" type="BYTES"  name="content"   cname="文件内容" />
+            <field id="14" type="UINT16"  name="resvered1"   cname="预留1" />
+            <field id="15" type="UINT16"  name="resvered2"   cname="预留2" />
+            <!--<field id="18" type="BYTES"  name="crc"   cname="CRC校验" length="2" />-->
+            <!--<field id="19" type="BYTES"  name="tail"   cname="帧尾" length="2" />-->
+        </body>
+        <body id="0x13" msgname="单车图片或视频数据反馈信息数据包（0x12）格式">
+            <field id="1" type="BYTES" name="equiptId"   cname="身份识别码" length="16"/>
+            <!--<field id="2" type="BYTES" name="checkNo" cname="检测编码" length="32" />-->
+            <field id="2" type="UINT16" name="year"   cname="年" />
+            <field id="3" type="UINT8" name="month"   cname="月" />
+            <field id="4" type="UINT8" name="day"   cname="日" />
+            <field id="5" type="INT24" name="dataNo"   cname="数据序号" />
+            <field id="6" type="INT8" name="imgType"   cname="收到图片的数据类型" />
+            <field id="7" type="UINT16" name="result"   cname="校验结果信息代码" />
+            <!--<field id="9" type="BYTES"  name="crc"   cname="CRC校验" length="2" />-->
+            <!--<field id="10" type="BYTES"  name="tail"   cname="帧尾" length="2" />-->
+        </body>
+    </msgseries>
+</msgconfig>

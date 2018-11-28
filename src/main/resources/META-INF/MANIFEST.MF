@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Class-Path: slf4j-api-1.7.25.jar netty-common-4.1.1.Final.jar commons-
+ lang-2.6.jar spring-boot-starter-1.5.4.RELEASE.jar logback-core-1.1.1
+ 1.jar spring-core-4.3.9.RELEASE.jar netty-handler-4.1.1.Final.jar jcl
+ -over-slf4j-1.7.25.jar jul-to-slf4j-1.7.25.jar netty-transport-4.1.1.
+ Final.jar spring-expression-4.3.9.RELEASE.jar jackson-databind-2.8.8.
+ jar netty-codec-4.1.1.Final.jar spring-boot-autoconfigure-1.5.4.RELEA
+ SE.jar spring-beans-4.3.9.RELEASE.jar snakeyaml-1.17.jar netty-codec-
+ http-4.1.1.Final.jar logback-classic-1.1.11.jar netty-buffer-4.1.1.Fi
+ nal.jar jackson-annotations-2.8.0.jar spring-context-4.3.9.RELEASE.ja
+ r netty-resolver-4.1.1.Final.jar jdbc-driver-11g.jar spring-boot-star
+ ter-logging-1.5.4.RELEASE.jar jackson-core-2.8.8.jar spring-aop-4.3.9
+ .RELEASE.jar spring-boot-1.5.4.RELEASE.jar log4j-over-slf4j-1.7.25.ja
+ r netty-socketio-1.7.11.jar netty-transport-native-epoll-4.1.1.Final.
+ jar
+Main-Class: com.hdsxtech.tjbhzc_datarecp_tcp.ServerApp
+
