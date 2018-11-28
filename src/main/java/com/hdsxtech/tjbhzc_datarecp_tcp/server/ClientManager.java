@@ -252,7 +252,7 @@ public class ClientManager {
                         try{
                             if (ClientManager.getClient(ctx) != null) {
                                 ClientManager.getClient(ctx).getMsgidMap().remove(m[6] & 0xFF);
-                                logger.info("respone success complete!!ok!!" + m);
+                                logger.info("respone success complete!!ok!!");
                             }
                         }catch(Exception e){
                             e.printStackTrace();

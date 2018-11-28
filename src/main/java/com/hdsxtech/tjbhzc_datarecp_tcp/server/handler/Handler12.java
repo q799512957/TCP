@@ -200,7 +200,7 @@ public class Handler12 implements IHandler {
             myTF.setStationID(stationID.toString());
             if (myTF.getImageType() == 129) {
                 this.logger.info("视频数据~~~id:" + myTF.getSingleVehicleID() + "~~~" + checkId + "~~~" + stationID + "~~~" + myTF.getYear() + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getMonth())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getDay())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getHour())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getMinute())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getSecond())}) + "~~~" + myTF.getStationCode() + "~~~OK");
-                System.out.println("m:---------------"+Arrays.toString(m));
+                //System.out.println("m:---------------"+Arrays.toString(m));
             } else {
                 this.logger.info("图片数据~~~id:" + myTF.getSingleVehicleID() + "~~~" + checkId + "~~~" + stationID + "~~~" + myTF.getYear() + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getMonth())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getDay())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getHour())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getMinute())}) + "~~~" + String.format("%02d", new Object[]{Integer.valueOf(myTF.getSecond())}) + "~~~" + myTF.getStationCode() + "~~~OK");
             }
@@ -210,17 +210,16 @@ public class Handler12 implements IHandler {
             String plate=String.format("%02x", new Object[]{Integer.valueOf(myTF.getImageType())})+new Date().getTime();
             myTF.setPlate(plate);
             if (myTF.getImageType() == 129 && myTF.getImage().length > 0 ) {
-                HKSPDll.instanceDll.transbyte(myTF.getStationID() + ".mp4", myTF.getImage(), myTF.getImage().length);
-                FileInputStream fis = new FileInputStream(plate + ".mp4.trans");
-                ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);
-                byte[] b = new byte[1000];
-                int n;
-                while ((n = fis.read(b)) != -1) {
-                    bos.write(b, 0, n);
-                }
-                fis.close();
-                bos.close();
-                myTF.setImage(bos.toByteArray());
+//                FileInputStream fis = new FileInputStream(plate + ".mp4.trans");
+//                ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);
+//                byte[] b = new byte[1000];
+//                int n;
+//                while ((n = fis.read(b)) != -1) {
+//                    bos.write(b, 0, n);
+//                }
+//                fis.close();
+//                bos.close();
+//                myTF.setImage(bos.toByteArray());
                 String fileurl = PropertiesUtil.getProperties().getProperty("uploadfile.uploadPicUrl");
                 FileImageOutputStream fio = null;
                 File f = null;
